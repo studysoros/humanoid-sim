@@ -26,11 +26,18 @@ Radxa CM5 compute. MuJoCo is the engine Menlo's own `robotics-sim` repo uses.
 
 ## Run it
 
+Install with [uv](https://docs.astral.sh/uv/) (`winget install astral-sh.uv` on Windows,
+or `curl -LsSf https://astral.sh/uv/install.sh | sh` on macOS/Linux):
+
+```
+uv venv
+uv pip install -r requirements.txt
+```
+
 **Start here — the interactive build tour** (guided, no robotics background needed):
 
 ```
-pip install -r requirements.txt
-python tour/server.py         # then open http://localhost:8321
+uv run tour/server.py         # then open http://localhost:8321
 ```
 
 Five stages walk through the build with plain-English explanations, live 3D,
@@ -40,12 +47,12 @@ legs on fixture → upper body → full integration (squat, wave, balance).
 Engineer's tools:
 
 ```
-python assembly/verify.py     # staged assembly, 18 acceptance checks
-python run_asimov.py          # commissioning routine, writes telemetry.csv
-python run_asimov.py --view   # same, with raw MuJoCo debug viewer
+uv run assembly/verify.py     # staged assembly, 18 acceptance checks
+uv run run_asimov.py          # commissioning routine, writes telemetry.csv
+uv run run_asimov.py --view   # same, with raw MuJoCo debug viewer
 ```
 
-Regenerate models after editing specs: `python model/build_mjcf.py --stage full`
+Regenerate models after editing specs: `uv run model/build_mjcf.py --stage full`
 (stages: `legs`, `lower_body`, `upper_body`, `full`).
 
 ## Assembly stages & what they check
