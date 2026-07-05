@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "build-tour",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["tour/server.py"],
+      "port": 8321
+    }
+  ]
+}
