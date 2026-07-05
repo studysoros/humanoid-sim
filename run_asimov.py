@@ -64,6 +64,11 @@ def main():
     if args.view:
         from mujoco import viewer as mj_viewer
         viewer = mj_viewer.launch_passive(model, data)
+        viewer.cam.lookat[:] = model.stat.center
+        viewer.cam.distance = 1.6 * model.stat.extent
+        viewer.cam.azimuth = 120
+        viewer.cam.elevation = -15
+        viewer.sync()
 
     log_path = ROOT / "telemetry.csv"
     t = 0.0
