@@ -4,6 +4,10 @@
   <default>
     <geom friction="1.0 0.005 0.0001" rgba="0.75 0.78 0.82 1" />
   </default>
+  <statistic center="0 0 0.622" extent="1.368" />
+  <visual>
+    <global azimuth="120" elevation="-15" />
+  </visual>
   <worldbody>
     <light pos="0 0 3" dir="0 0 -1" />
     <geom name="floor" type="plane" size="5 5 0.1" rgba="0.3 0.35 0.3 1" />

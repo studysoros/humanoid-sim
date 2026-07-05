@@ -165,6 +165,18 @@ class Builder:
         default = sub(root, "default")
         sub(default, "geom", friction="1.0 0.005 0.0001", rgba="0.75 0.78 0.82 1")
 
+        # frame the default viewer camera on the robot, not the floor plane
+        if self.stage == "upper_body":
+            top = 1.0 + 0.10 + g["torso_length"] + g["neck_length"] + g["head_radius"] * 1.6
+        elif self.stage == "full":
+            top = (g["pelvis_height"] + 0.10 + g["torso_length"]
+                   + g["neck_length"] + g["head_radius"] * 1.6)
+        else:
+            top = g["pelvis_height"] + (0.25 if self.stage == "legs" else 0.0) + 0.12
+        sub(root, "statistic", center=fmt(0, 0, top / 2), extent=fmt(top * 1.1))
+        visual = sub(root, "visual")
+        sub(visual, "global", azimuth="120", elevation="-15")
+
         world = sub(root, "worldbody")
         sub(world, "light", pos="0 0 3", dir="0 0 -1")
         sub(world, "geom", name="floor", type="plane", size="5 5 0.1", rgba="0.3 0.35 0.3 1")
