@@ -1,0 +1,115 @@
+<mujoco model="asimov1_legs">
+  <compiler angle="radian" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" />
+  <default>
+    <geom friction="1.0 0.005 0.0001" rgba="0.75 0.78 0.82 1" />
+  </default>
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" />
+    <geom name="floor" type="plane" size="5 5 0.1" rgba="0.3 0.35 0.3 1" />
+    <body name="pelvis" pos="0 0 0.87">
+      <geom name="pelvis_geom" type="box" pos="0 0 0.05" size="0.08 0.13 0.07" mass="4.0" />
+      <site name="pelvis_site" pos="0 0 0" />
+      <body name="left_hip" pos="0 0.1 0">
+        <joint name="left_hip_pitch_joint" axis="0 1 0" range="-2.09 1" damping="1.0" armature="0.05" limited="true" />
+        <geom type="sphere" size="0.03" mass="0.5" contype="0" conaffinity="0" rgba="0.25 0.25 0.28 1" />
+        <body name="left_hip2" pos="0 0 0">
+          <joint name="left_hip_roll_joint" axis="-1 0 0" range="-0.79 0.79" damping="1.0" armature="0.05" limited="true" />
+          <geom type="sphere" size="0.03" mass="0.4" contype="0" conaffinity="0" rgba="0.25 0.25 0.28 1" />
+          <body name="left_thigh" pos="0 0 0">
+            <joint name="left_hip_yaw_joint" axis="0 0 1" range="-0.79 0.79" damping="1.0" armature="0.01" limited="true" />
+            <geom type="capsule" fromto="0 0 -0.03 0 0 -0.25" size="0.055" mass="2.9" />
+            <body name="left_shank" pos="0 0 -0.28">
+              <joint name="left_knee_joint" axis="0 1 0" range="0 1.5" damping="1.0" armature="0.05" limited="true" />
+              <geom type="capsule" fromto="0 0 -0.03 0 0 -0.25" size="0.045" mass="1.8" />
+              <body name="left_ankle" pos="0 0 -0.28">
+                <joint name="left_ankle_pitch_joint" axis="0 1 0" range="-0.35 0.35" damping="1.0" armature="0.05" limited="true" />
+                <geom type="sphere" size="0.03" mass="0.2" contype="0" conaffinity="0" rgba="0.25 0.25 0.28 1" />
+                <body name="left_foot" pos="0 0 0">
+                  <joint name="left_ankle_roll_joint" axis="-1 0 0" range="-0.1 0.1" damping="1.0" armature="0.01" limited="true" />
+                  <geom type="box" pos="0.003333 0 -0.045" size="0.07 0.04 0.015" mass="0.9" />
+                  <body name="left_toe" pos="0.07333 0 -0.045">
+                    <joint name="left_toe_joint" axis="0 1 0" range="-1.05 0" stiffness="2.67" damping="0.05" limited="true" />
+                    <geom type="box" pos="0.03 0 0" size="0.03 0.04 0.012" mass="0.15" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_hip" pos="0 -0.1 0">
+        <joint name="right_hip_pitch_joint" axis="0 -1 0" range="-1 2.09" damping="1.0" armature="0.05" limited="true" />
+        <geom type="sphere" size="0.03" mass="0.5" contype="0" conaffinity="0" rgba="0.25 0.25 0.28 1" />
+        <body name="right_hip2" pos="0 0 0">
+          <joint name="right_hip_roll_joint" axis="-1 0 0" range="-0.79 0.79" damping="1.0" armature="0.05" limited="true" />
+          <geom type="sphere" size="0.03" mass="0.4" contype="0" conaffinity="0" rgba="0.25 0.25 0.28 1" />
+          <body name="right_thigh" pos="0 0 0">
+            <joint name="right_hip_yaw_joint" axis="0 0 1" range="-0.79 0.79" damping="1.0" armature="0.01" limited="true" />
+            <geom type="capsule" fromto="0 0 -0.03 0 0 -0.25" size="0.055" mass="2.9" />
+            <body name="right_shank" pos="0 0 -0.28">
+              <joint name="right_knee_joint" axis="0 -1 0" range="-1.5 0" damping="1.0" armature="0.05" limited="true" />
+              <geom type="capsule" fromto="0 0 -0.03 0 0 -0.25" size="0.045" mass="1.8" />
+              <body name="right_ankle" pos="0 0 -0.28">
+                <joint name="right_ankle_pitch_joint" axis="0 -1 0" range="-0.35 0.35" damping="1.0" armature="0.05" limited="true" />
+                <geom type="sphere" size="0.03" mass="0.2" contype="0" conaffinity="0" rgba="0.25 0.25 0.28 1" />
+                <body name="right_foot" pos="0 0 0">
+                  <joint name="right_ankle_roll_joint" axis="-1 0 0" range="-0.1 0.1" damping="1.0" armature="0.01" limited="true" />
+                  <geom type="box" pos="0.003333 0 -0.045" size="0.07 0.04 0.015" mass="0.9" />
+                  <body name="right_toe" pos="0.07333 0 -0.045">
+                    <joint name="right_toe_joint" axis="0 -1 0" range="0 1.05" stiffness="2.67" damping="0.05" limited="true" />
+                    <geom type="box" pos="0.03 0 0" size="0.03 0.04 0.012" mass="0.15" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="pelvis" body2="left_thigh" />
+    <exclude body1="pelvis" body2="right_thigh" />
+  </contact>
+  <actuator>
+    <motor name="left_hip_pitch" joint="left_hip_pitch_joint" ctrlrange="-120 120" />
+    <motor name="left_hip_roll" joint="left_hip_roll_joint" ctrlrange="-90 90" />
+    <motor name="left_hip_yaw" joint="left_hip_yaw_joint" ctrlrange="-60 60" />
+    <motor name="left_knee" joint="left_knee_joint" ctrlrange="-75 75" />
+    <motor name="left_ankle_pitch" joint="left_ankle_pitch_joint" ctrlrange="-145.4 145.4" />
+    <motor name="left_ankle_roll" joint="left_ankle_roll_joint" ctrlrange="-57.6 57.6" />
+    <motor name="right_hip_pitch" joint="right_hip_pitch_joint" ctrlrange="-120 120" />
+    <motor name="right_hip_roll" joint="right_hip_roll_joint" ctrlrange="-90 90" />
+    <motor name="right_hip_yaw" joint="right_hip_yaw_joint" ctrlrange="-60 60" />
+    <motor name="right_knee" joint="right_knee_joint" ctrlrange="-75 75" />
+    <motor name="right_ankle_pitch" joint="right_ankle_pitch_joint" ctrlrange="-145.4 145.4" />
+    <motor name="right_ankle_roll" joint="right_ankle_roll_joint" ctrlrange="-57.6 57.6" />
+  </actuator>
+  <sensor>
+    <jointpos name="left_hip_pitch_joint_pos" joint="left_hip_pitch_joint" />
+    <jointvel name="left_hip_pitch_joint_vel" joint="left_hip_pitch_joint" />
+    <jointpos name="left_hip_roll_joint_pos" joint="left_hip_roll_joint" />
+    <jointvel name="left_hip_roll_joint_vel" joint="left_hip_roll_joint" />
+    <jointpos name="left_hip_yaw_joint_pos" joint="left_hip_yaw_joint" />
+    <jointvel name="left_hip_yaw_joint_vel" joint="left_hip_yaw_joint" />
+    <jointpos name="left_knee_joint_pos" joint="left_knee_joint" />
+    <jointvel name="left_knee_joint_vel" joint="left_knee_joint" />
+    <jointpos name="left_ankle_pitch_joint_pos" joint="left_ankle_pitch_joint" />
+    <jointvel name="left_ankle_pitch_joint_vel" joint="left_ankle_pitch_joint" />
+    <jointpos name="left_ankle_roll_joint_pos" joint="left_ankle_roll_joint" />
+    <jointvel name="left_ankle_roll_joint_vel" joint="left_ankle_roll_joint" />
+    <jointpos name="right_hip_pitch_joint_pos" joint="right_hip_pitch_joint" />
+    <jointvel name="right_hip_pitch_joint_vel" joint="right_hip_pitch_joint" />
+    <jointpos name="right_hip_roll_joint_pos" joint="right_hip_roll_joint" />
+    <jointvel name="right_hip_roll_joint_vel" joint="right_hip_roll_joint" />
+    <jointpos name="right_hip_yaw_joint_pos" joint="right_hip_yaw_joint" />
+    <jointvel name="right_hip_yaw_joint_vel" joint="right_hip_yaw_joint" />
+    <jointpos name="right_knee_joint_pos" joint="right_knee_joint" />
+    <jointvel name="right_knee_joint_vel" joint="right_knee_joint" />
+    <jointpos name="right_ankle_pitch_joint_pos" joint="right_ankle_pitch_joint" />
+    <jointvel name="right_ankle_pitch_joint_vel" joint="right_ankle_pitch_joint" />
+    <jointpos name="right_ankle_roll_joint_pos" joint="right_ankle_roll_joint" />
+    <jointvel name="right_ankle_roll_joint_vel" joint="right_ankle_roll_joint" />
+  </sensor>
+</mujoco>

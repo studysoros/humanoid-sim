@@ -1,0 +1,98 @@
+{
+  "source": [
+    "https://docs.menlo.ai/asimov/1",
+    "https://docs.menlo.ai/asimov/1/hardware/battery",
+    "https://docs.menlo.ai/asimov/1/hardware/electronics-and-wiring"
+  ],
+  "name": "Asimov 1",
+  "height_m": 1.23,
+  "mass_kg": 35.0,
+  "dof": {
+    "actuated": 25,
+    "passive": 2
+  },
+  "payload_kg": {
+    "min": 5,
+    "max": 18
+  },
+  "battery": {
+    "chemistry": "Li-ion INR18650",
+    "config": "13S4P",
+    "nominal_voltage": 46.8,
+    "charge_voltage": 54.6,
+    "cutoff_voltage": 35.75,
+    "capacity_ah": 10.5,
+    "energy_wh": 491.4,
+    "max_discharge_a": 31.5,
+    "bms": {
+      "cell_ov": 4.25,
+      "cell_uv": 2.75,
+      "oc_limit_a": 30.0
+    },
+    "mass_kg": 2.0
+  },
+  "electronics": {
+    "compute": [
+      "Raspberry Pi 5",
+      "Radxa CM5"
+    ],
+    "motion_control_board": true,
+    "can_branches": {
+      "left_leg": {
+        "entry": "left_hip_pitch",
+        "bitrate": 1000000
+      },
+      "right_leg": {
+        "entry": "right_hip_pitch",
+        "bitrate": 1000000
+      },
+      "waist": {
+        "entry": "waist_yaw",
+        "bitrate": 1000000
+      },
+      "left_arm": {
+        "entry": "left_shoulder_pitch",
+        "bitrate": 1000000
+      },
+      "right_arm": {
+        "entry": "right_shoulder_pitch",
+        "bitrate": 1000000
+      },
+      "neck": {
+        "entry": "neck_yaw",
+        "bitrate": 500000
+      }
+    },
+    "connector": "XT30 (2+2): BATT+, BATT-, CAN_H, CAN_L"
+  },
+  "geometry_estimates": {
+    "note": "Link dimensions/masses are NOT published (CAD is STEP-only). Estimated from 1.23 m stature with anthropometric proportions and a 35 kg budget incl. 2 kg battery in torso.",
+    "pelvis_height": 0.62,
+    "hip_offset_y": 0.1,
+    "thigh_length": 0.28,
+    "shank_length": 0.28,
+    "ankle_height": 0.06,
+    "foot_length": 0.2,
+    "foot_width": 0.08,
+    "toe_length": 0.06,
+    "torso_length": 0.3,
+    "shoulder_offset_y": 0.16,
+    "upper_arm_length": 0.2,
+    "forearm_length": 0.19,
+    "neck_length": 0.08,
+    "head_radius": 0.09,
+    "mass_budget_kg": {
+      "pelvis": 4.0,
+      "torso": 6.2,
+      "battery_in_torso": 2.0,
+      "head": 1.5,
+      "thigh": 2.9,
+      "shank": 1.8,
+      "foot": 0.9,
+      "toe": 0.15,
+      "upper_arm": 1.6,
+      "forearm": 1.0,
+      "hand": 0.4
+    }
+  }
+}

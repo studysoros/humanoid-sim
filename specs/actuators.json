@@ -1,0 +1,42 @@
+{
+  "source": "https://docs.menlo.ai/asimov/1/hardware/joint-design-and-actuation",
+  "notes": "Asimov 1 actuator table. Kt in Nm/A at the joint output. Ranges in rad, velocity in rad/s, torque in Nm.",
+  "actuators": [
+    {"id": 1,  "joint": "left_hip_pitch_joint",      "model": "EC-A6416-P2-25",   "range": [-2.09, 1.00],  "vel_limit": 12.57, "kt": 2.75, "rated_torque": 40.0, "peak_torque": 120.0, "branch": "left_leg"},
+    {"id": 2,  "joint": "left_hip_roll_joint",       "model": "EC-A5013-H17-100", "range": [-0.79, 0.79],  "vel_limit": 3.98,  "kt": 7.15, "rated_torque": 30.0, "peak_torque": 90.0,  "branch": "left_leg"},
+    {"id": 3,  "joint": "left_hip_yaw_joint",        "model": "EC-A3814-H14-107", "range": [-0.79, 0.79],  "vel_limit": 5.45,  "kt": 5.70, "rated_torque": 20.0, "peak_torque": 60.0,  "branch": "left_leg"},
+    {"id": 4,  "joint": "left_knee_joint",           "model": "EC-A4315-P2-36",   "range": [0.00, 1.50],   "vel_limit": 12.25, "kt": 2.53, "rated_torque": 25.0, "peak_torque": 75.0,  "branch": "left_leg"},
+    {"id": 5,  "joint": "left_ankle_pitch_joint",    "model": "EC-A4310-P2-36",   "range": [-0.35, 0.35],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 40.0, "peak_torque": 145.4, "branch": "left_leg"},
+    {"id": 6,  "joint": "left_ankle_roll_joint",     "model": "EC-A4310-P2-36",   "range": [-0.10, 0.10],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 17.0, "peak_torque": 57.6,  "branch": "left_leg"},
+    {"id": 7,  "joint": "right_hip_pitch_joint",     "model": "EC-A6416-P2-25",   "range": [-1.00, 2.09],  "vel_limit": 12.57, "kt": 2.75, "rated_torque": 40.0, "peak_torque": 120.0, "branch": "right_leg"},
+    {"id": 8,  "joint": "right_hip_roll_joint",      "model": "EC-A5013-H17-100", "range": [-0.79, 0.79],  "vel_limit": 3.98,  "kt": 7.15, "rated_torque": 30.0, "peak_torque": 90.0,  "branch": "right_leg"},
+    {"id": 9,  "joint": "right_hip_yaw_joint",       "model": "EC-A3814-H14-107", "range": [-0.79, 0.79],  "vel_limit": 5.45,  "kt": 5.70, "rated_torque": 20.0, "peak_torque": 60.0,  "branch": "right_leg"},
+    {"id": 10, "joint": "right_knee_joint",          "model": "EC-A4315-P2-36",   "range": [-1.50, 0.00],  "vel_limit": 12.25, "kt": 2.53, "rated_torque": 25.0, "peak_torque": 75.0,  "branch": "right_leg"},
+    {"id": 11, "joint": "right_ankle_pitch_joint",   "model": "EC-A4310-P2-36",   "range": [-0.35, 0.35],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 40.0, "peak_torque": 145.4, "branch": "right_leg"},
+    {"id": 12, "joint": "right_ankle_roll_joint",    "model": "EC-A4310-P2-36",   "range": [-0.10, 0.10],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 17.0, "peak_torque": 57.6,  "branch": "right_leg"},
+    {"id": 13, "joint": "left_shoulder_pitch_joint", "model": "EC-A5013-H17-100", "range": [-3.14, 0.87],  "vel_limit": 3.98,  "kt": 7.15, "rated_torque": 30.0, "peak_torque": 90.0,  "branch": "left_arm"},
+    {"id": 14, "joint": "left_shoulder_roll_joint",  "model": "EC-A4315-P2-36",   "range": [-1.57, 0.00],  "vel_limit": 12.25, "kt": 2.53, "rated_torque": 25.0, "peak_torque": 75.0,  "branch": "left_arm"},
+    {"id": 15, "joint": "left_shoulder_yaw_joint",   "model": "EC-A3814-H14-107", "range": [-1.57, 1.57],  "vel_limit": 5.45,  "kt": 5.70, "rated_torque": 20.0, "peak_torque": 60.0,  "branch": "left_arm"},
+    {"id": 16, "joint": "left_elbow_joint",          "model": "EC-A4310-P2-36",   "range": [0.00, 2.44],   "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 12.0, "peak_torque": 36.0,  "branch": "left_arm"},
+    {"id": 17, "joint": "left_wrist_yaw_joint",      "model": "EC-A4310-P2-36",   "range": [-3.14, 3.14],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 12.0, "peak_torque": 36.0,  "branch": "left_arm"},
+    {"id": 18, "joint": "right_shoulder_pitch_joint","model": "EC-A5013-H17-100", "range": [-0.87, 3.14],  "vel_limit": 3.98,  "kt": 7.15, "rated_torque": 30.0, "peak_torque": 90.0,  "branch": "right_arm"},
+    {"id": 19, "joint": "right_shoulder_roll_joint", "model": "EC-A4315-P2-36",   "range": [0.00, 1.57],   "vel_limit": 12.25, "kt": 2.53, "rated_torque": 25.0, "peak_torque": 75.0,  "branch": "right_arm"},
+    {"id": 20, "joint": "right_shoulder_yaw_joint",  "model": "EC-A3814-H14-107", "range": [-1.57, 1.57],  "vel_limit": 5.45,  "kt": 5.70, "rated_torque": 20.0, "peak_torque": 60.0,  "branch": "right_arm"},
+    {"id": 21, "joint": "right_elbow_joint",         "model": "EC-A4310-P2-36",   "range": [-2.44, 0.00],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 12.0, "peak_torque": 36.0,  "branch": "right_arm"},
+    {"id": 22, "joint": "right_wrist_yaw_joint",     "model": "EC-A4310-P2-36",   "range": [-3.14, 3.14],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 12.0, "peak_torque": 36.0,  "branch": "right_arm"},
+    {"id": 23, "joint": "waist_yaw_joint",           "model": "EC-A6416-P2-25",   "range": [-1.57, 1.57],  "vel_limit": 12.57, "kt": 2.75, "rated_torque": 40.0, "peak_torque": 120.0, "branch": "waist"},
+    {"id": 24, "joint": "neck_yaw_joint",            "model": "EC-A4310-P2-36",   "range": [-1.57, 1.57],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 12.0, "peak_torque": 36.0,  "branch": "neck"},
+    {"id": 25, "joint": "neck_pitch_joint",          "model": "EC-A4310-P2-36",   "range": [-0.79, 0.79],  "vel_limit": 9.32,  "kt": 1.81, "rated_torque": 12.0, "peak_torque": 36.0,  "branch": "neck"}
+  ],
+  "passive_joints": [
+    {"joint": "left_toe_joint",  "range": [-1.05, 0.00], "stiffness": 2.67},
+    {"joint": "right_toe_joint", "range": [0.00, 1.05],  "stiffness": 2.67}
+  ],
+  "ankle_rsu": {
+    "type": "parallel RSU (Revolute-Spherical-Universal)",
+    "mapping": "theta_p = (theta_A - theta_B) * (r / (2 * d)); theta_r = (theta_A + theta_B) * (r / (2 * w))",
+    "r": 0.025,
+    "d": 0.055,
+    "note": "r and d not published; chosen so motor range covers joint range"
+  }
+}

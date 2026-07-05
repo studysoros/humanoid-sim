@@ -1,0 +1,10 @@
+ERROR Sat Jul  4 12:21:50 2026: could not create window
+
+ERROR Sat Jul  4 12:26:34 2026: could not create window
+
+ERROR Sun Jul  5 09:47:29 2026: could not create window
+
+ERROR Sun Jul  5 10:03:44 2026: could not create window
+
+ERROR Sun Jul  5 10:28:37 2026: could not create window
+
